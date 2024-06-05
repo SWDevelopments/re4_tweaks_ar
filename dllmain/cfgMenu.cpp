@@ -441,12 +441,12 @@ void cfgMenuRender()
 
 						ImGui::Dummy(ImVec2(10, 10 * esHook._cur_monitor_dpi));
 
-						ImGui::TextWrapped("Additional FOV value.");
-						ImGui::TextWrapped("20 seems good for most cases.");
+						ImGui::TextWrapped("مجال الرؤية (FOV)");
+						ImGui::TextWrapped("20 يعتبر مناسب في اغلب الحالات");
 
 						ImGui::Dummy(ImVec2(10, 10 * esHook._cur_monitor_dpi));
 
-						ImGui::PushItemWidth(ImGui::GetContentRegionAvail().x - ImGui::CalcTextSize("FOV Slider").x);
+						ImGui::PushItemWidth(ImGui::GetContentRegionAvail().x - ImGui::CalcTextSize("خط مجال الرؤية").x);
 						ImGui::BeginDisabled(!re4t::cfg->bEnableFOV);
 						ImGui::SliderFloat("FOV Slider", &re4t::cfg->fFOVAdditional, 0.0f, 50.0f, "%.0f", ImGuiSliderFlags_AlwaysClamp);
 						ImGui::EndDisabled();
@@ -461,7 +461,7 @@ void cfgMenuRender()
 					{
 						ImGui_ColumnSwitch();
 
-						if (ImGui::Checkbox("DisableVsync", &re4t::cfg->bDisableVsync))
+						if (ImGui::Checkbox("اغلاق وضع التزامن", &re4t::cfg->bDisableVsync))
 						{
 							re4t::cfg->HasUnsavedChanges = true;
 
